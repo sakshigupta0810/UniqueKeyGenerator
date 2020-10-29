@@ -1,0 +1,88 @@
+<html>
+<head>
+  <h1 id="heading"> Unique Key Generator</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script lang="javascript" src="js/xlsx.full.min.js"></script>
+<script lang="javascript" src="js/FileSaver.min.js"></script>
+
+</head>
+<body id="container">
+ <button id="button" onclick= "SavetoCSV()">Create Excel</button> 
+
+
+<script>
+//----------------------------------prevent loading---------------------------------
+window.onbeforeunload = function() {
+        return "Leave this page ?";
+    }
+$(document).on("keydown", function (e) {
+        if (e.key == "F5" || e.key == "F11" || 
+            (e.ctrlKey == true && (e.key == 'r' || e.key == 'R')) || 
+            e.keyCode == 116 || e.keyCode == 82) {
+
+                   e.preventDefault();
+        }
+    });
+	
+</script>
+<div id="sub_container">
+
+  <label id="key" for="key">Unique Key:</label><br>
+  <input type="text" id="keyvalue" placeholder= "Automatically Generated" readonly></br></br>
+  <label id="name" for="name">District name:</label><br>
+  <input type="text" id="namevalue" placeholder= "Enter district name here"/><br><br>
+  <p style= "font-size: 25x;">The Remaining Unassigned Keys Are: <span id="counter"></span></p>
+ 
+  <button id="btn" onclick="nextKey(); validateEmpty(); addElement()">Submit </button>
+<button id="reset" onclick="fieldReset()">Reset</button>
+<button id="addnew" onclick="addNew()">Add More Keys</button>
+
+<!-- <input type="text" id="searchdist" placeholder= "Search District name here"/>
+<input type="text" id="displayname"/>
+<button id="search" onclick="searchDist()">Search</button> -->
+
+</div>
+
+
+<!-- <script>
+
+var wb = XLSX.utils.book_new();
+        wb.Props = {
+                Title: "SheetJS Tutorial",
+                Subject: "Test",
+                Author: "Red Stapler",
+                CreatedDate: new Date(2017,12,19)
+        };
+        
+        wb.SheetNames.push("Test Sheet");
+        var ws_data = [valarray];
+		var test = [data];
+		console.log("testing for json"+test);
+        var ws = XLSX.utils.aoa_to_sheet(ws_data);
+        wb.Sheets["Test Sheet"] = ws;
+        var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+        function s2ab(s) {
+  
+                var buf = new ArrayBuffer(s.length);
+                var view = new Uint8Array(buf);
+                for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+                return buf;
+                
+        }
+        $("#button-a").click(function(){
+                saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'test.xlsx');
+        });
+</script> -->
+<script>
+  function fieldReset(){
+  $('input:text').val("");
+}
+
+</script>
+
+
+</body>
+</html>	

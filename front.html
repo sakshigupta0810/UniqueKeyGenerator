@@ -1,0 +1,132 @@
+<html>
+<head>
+  <h1 id="heading" align='centre'> WELCOME TO KEY GENERATOR</h1>
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #5c0cf9;
+  color: white;
+  padding: 14px 20px;
+
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+#btn_out{
+  margin: 119px 341px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.container {
+  padding: 18px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Admin Page Login</h2>
+
+<button id= 'btn_out' onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  <a href="http://localhost//UniqueKeygenerator/main.html">
+    <button style="width:auto;">Click ME</button>
+  </a>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="file:///D:/sakshi/WFH/Project_KeyGenerator/UniqueKeyGenerator/form.html" onsubmit="return (this.pass.value==='admin123' && this.user.value ==='Admin')?true:false;">>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name = 'user' required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name= 'pass' required>
+        
+      <button type="submit" id='btn_lg'>Login</button>
+	   <input type="reset" id='btn_cn' value="Cancel"/>
+         </div>
+
+  </form>
+</div>
+
+</body>
+</html>
